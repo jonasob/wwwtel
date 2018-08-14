@@ -1,0 +1,15 @@
+#!/bin/sh
+r=`/home/www/mush/randint.cgi`
+cat << _END_
+Content-type: text/html
+
+<html>
+<head>
+  <title>Telnet to poledra.coyote.org:8080</title>
+</head>
+<frameset rows="90%,*">
+  <frame src="nph-textout.cgi?$r">
+  <frame src="send.cgi?$r">
+</frameset>
+</html>
+_END_
